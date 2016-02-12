@@ -64,6 +64,7 @@ const struct m_opt_choice_alternatives mp_csp_prim_names[] = {
     {"adobe",       MP_CSP_PRIM_ADOBE},
     {"prophoto",    MP_CSP_PRIM_PRO_PHOTO},
     {"cie1931",     MP_CSP_PRIM_CIE_1931},
+    {"DCI-P3",      MP_CSP_PRIM_DCI_P3},
     {0}
 };
 
@@ -74,6 +75,8 @@ const struct m_opt_choice_alternatives mp_csp_trc_names[] = {
     {"linear",      MP_CSP_TRC_LINEAR},
     {"gamma1.8",    MP_CSP_TRC_GAMMA18},
     {"gamma2.2",    MP_CSP_TRC_GAMMA22},
+    {"gamma2.4",    MP_CSP_TRC_GAMMA24},
+    {"gamma2.6",    MP_CSP_TRC_GAMMA26},
     {"gamma2.8",    MP_CSP_TRC_GAMMA28},
     {"prophoto",    MP_CSP_TRC_PRO_PHOTO},
     {0}
@@ -402,6 +405,13 @@ struct mp_csp_primaries mp_get_csp_primaries(enum mp_csp_prim spc)
             .green = {0.2738, 0.7174},
             .blue  = {0.1666, 0.0089},
             .white = e
+        };
+    case MP_CSP_PRIM_DCI_P3:
+        return (struct mp_csp_primaries) {
+            .red   = {0.680, 0.320},
+            .green = {0.265, 0.690},
+            .blue  = {0.150, 0.060},
+            .white = d65
         };
     default:
         return (struct mp_csp_primaries) {{0}};

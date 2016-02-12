@@ -260,6 +260,12 @@ void pass_linearize(struct gl_shader_cache *sc, enum mp_csp_trc trc)
     case MP_CSP_TRC_GAMMA22:
         GLSL(color.rgb = pow(color.rgb, vec3(2.2));)
         break;
+    case MP_CSP_TRC_GAMMA24:
+        GLSL(color.rgb = pow(color.rgb, vec3(2.4));)
+        break;
+    case MP_CSP_TRC_GAMMA26:
+        GLSL(color.rgb = pow(color.rgb, vec3(2.6));)
+        break;
     case MP_CSP_TRC_GAMMA28:
         GLSL(color.rgb = pow(color.rgb, vec3(2.8));)
         break;
@@ -293,6 +299,12 @@ void pass_delinearize(struct gl_shader_cache *sc, enum mp_csp_trc trc)
         break;
     case MP_CSP_TRC_GAMMA22:
         GLSL(color.rgb = pow(color.rgb, vec3(1.0/2.2));)
+        break;
+    case MP_CSP_TRC_GAMMA24:
+        GLSL(color.rgb = pow(color.rgb, vec3(1.0/2.4));)
+        break;
+    case MP_CSP_TRC_GAMMA26:
+        GLSL(color.rgb = pow(color.rgb, vec3(1.0/2.6));)
         break;
     case MP_CSP_TRC_GAMMA28:
         GLSL(color.rgb = pow(color.rgb, vec3(1.0/2.8));)
