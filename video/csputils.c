@@ -79,6 +79,7 @@ const struct m_opt_choice_alternatives mp_csp_trc_names[] = {
     {"gamma2.6",    MP_CSP_TRC_GAMMA26},
     {"gamma2.8",    MP_CSP_TRC_GAMMA28},
     {"prophoto",    MP_CSP_TRC_PRO_PHOTO},
+    {"DCI-P3",      MP_CSP_TRC_DCI_P3},
     {0}
 };
 

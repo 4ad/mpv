@@ -80,6 +80,7 @@ enum mp_csp_trc {
     MP_CSP_TRC_GAMMA26,
     MP_CSP_TRC_GAMMA28,
     MP_CSP_TRC_PRO_PHOTO,
+    MP_CSP_TRC_DCI_P3,
     MP_CSP_TRC_COUNT
 };
 
